@@ -124,10 +124,6 @@ TARGET_SCREEN_HEIGHT := 2460
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider-service.lineage
 
-# Configstore
-PRODUCT_PACKAGES += \
-    disable_configstore
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
