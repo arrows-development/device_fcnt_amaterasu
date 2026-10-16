@@ -88,28 +88,6 @@
         <fqname>@2.3::IUceService/com.qualcomm.qti.uceservice</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.lge.hardware.lgdata</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.1::ILgData/default</fqname>
-        <fqname>@1.1::ILgDataVendorRil/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.lge.hardware.radio</name>
-        <transport>hwbinder</transport>
-        <fqname>@2.0::ILgeRadio/lge_radio</fqname>
-        <fqname>@2.0::ILgeRadio/radio1_wifi</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.lge.hardware.vss_ims</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IVssIms/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.nxp.nxpnfc</name>
-        <transport>hwbinder</transport>
-        <fqname>@2.0::INxpNfc/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.qti.data.factory</name>
         <transport>hwbinder</transport>
         <fqname>@2.3::IFactory/default</fqname>

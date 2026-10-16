@@ -1,1 +1,1 @@
-require board=kona|sm8250|timelm
+require board=F51A|FJDEV070

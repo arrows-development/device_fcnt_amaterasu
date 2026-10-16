@@ -27,7 +27,7 @@ persist.vendor.audio.spv3.enable=true
 persist.vendor.audio.voicecall.speaker.stereo=false
 ro.config.media_vol_default=14
 ro.config.media_vol_steps=25
-persist.vendor.lge.3rd.speaker.prot.enable=on
+persist.vendor.fcnt.3rd.speaker.prot.enable=on
 ro.vendor.audio.sdk.fluencetype=nxp
 ro.vendor.audio.sdk.ssr=false
 use.voice.path.for.pcm.voip=true
@@ -55,22 +55,6 @@ vendor.audio.volume.headset.gain.depcal=true
 vendor.audio_hal.in_period_size=144
 vendor.audio_hal.period_multiplier=3
 vendor.audio_hal.period_size=192
-
-# Audio - DAC
-persist.vendor.lge.audio.handset_rx_type=DEFAULT
-persist.vendor.lge.audio.hifi_adv_support=1
-persist.vendor.lge.audio.nsenabled=ON
-ro.vendor.lge.config.hifi_enhance_support=1
-ro.vendor.lge.feature.use_audio_headset_type_ext=true
-vendor.lge.audio.hifi_rec.concert_gain=-140
-vendor.lge.audio.hifi_rec.concert_lcf=0
-vendor.lge.audio.hifi_rec.concert_lmt=0
-vendor.lge.audio.hifi_rec.normal_gain=0
-vendor.lge.audio.hifi_rec.normal_lcf=75
-vendor.lge.audio.hifi_rec.normal_lmt=0
-vendor.lge.audio.hifi_rec.offset_gain=39
-vendor.lge.fm_gain_control_headset=1.0
-vendor.lge.fm_gain_control_speaker=2.5
 
 # Bluetooth
 persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
@@ -105,10 +89,6 @@ vendor.qcom.bluetooth.soc=hastings
 
 # Camera
 camera.disable_zsl_mode=true
-ro.vendor.lge.logical.camera=2
-ro.vendor.lge.aux.camera=2
-ro.vendor.lge.physical.camera=5
-ro.vendor.lge.expose_tof_sensor=1
 vendor.camera.provider.blacklist_ids=4,5,6,7,8,9
 
 # Charger
@@ -170,10 +150,6 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 # Gatekeeper
 vendor.gatekeeper.disable_spu=true
 
-# GPS
-persist.vendor.lge.gnss.lppe_support=11
-persist.vendor.lge.gnss.week_number=1738
-
 # Graphics
 debug.renderengine.backend=skiaglthreaded
 debug.sf.hw=0
@@ -194,13 +170,6 @@ vendor.gralloc.disable_ubwc=0
 
 # Keystore
 ro.hardware.keystore_desede=true
-
-# LGE
-ro.vendor.lge.build.target_country=COM
-ro.vendor.lge.build.target_operator=LAO
-ro.vendor.lge.swversion_arb=ARB00
-ro.vendor.lge.swversion=V60040d
-ro.vendor.lge.swversion_short=V40d
 
 # Log
 ro.logd.size=8M

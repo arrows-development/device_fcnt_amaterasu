@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/lge/timelm
+DEVICE_PATH := device/fcnt/amaterasu
 
 # A/B
 AB_OTA_PARTITIONS += \
@@ -50,7 +50,7 @@ TARGET_NO_BOOTLOADER := true
 
 # Display
 TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE := true
-TARGET_SCREEN_DENSITY := 420
+TARGET_SCREEN_DENSITY := 560
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
@@ -61,7 +61,6 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 DEVICE_MATRIX_FILE += hardware/qcom-caf/common/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-    hardware/lge/vintf/device_framework_matrix.xml \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml
 
 # Kernel
@@ -76,8 +75,9 @@ BOARD_KERNEL_CMDLINE := \
     androidboot.usbcontroller=a600000.dwc3 \
     kpti=off \
     cgroup.memory=nokmem,nosocket \
-    androidboot.hardware=timelm \
+    androidboot.hardware=qcom \
     androidboot.init_fatal_reboot_target=recovery
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -85,11 +85,24 @@ BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_DTB_OFFSET := 0x01f00000
 BOARD_KERNEL_IMAGE_NAME := Image.gz
-TARGET_KERNEL_CONFIG := vendor/kona-perf_defconfig vendor/timelm.config
+TARGET_KERNEL_CONFIG := vendor/kona-perf_defconfig vendor/amaterasu.config
 TARGET_KERNEL_NO_GCC := true
-TARGET_KERNEL_SOURCE := kernel/lge/sm8250
+TARGET_KERNEL_SOURCE := kernel/fcnt/sm8250
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --base $(BOARD_KERNEL_BASE) --pagesize $(BOARD_KERNEL_PAGESIZE) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET) --kernel_offset $(BOARD_KERNEL_OFFSET) --dtb_offset $(BOARD_DTB_OFFSET) --header_version $(BOARD_BOOT_HEADER_VERSION)
+
+# Kill lineage kernel build task while preserving kernel
+TARGET_NO_KERNEL_OVERRIDE := true
+
+# Kernel - DTB/DTBO
+TARGET_FORCE_PREBUILT_KERNEL := true
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)-kernel/kernel
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)-kernel/dtb.img
+PRODUCT_COPY_FILES += \
+	$(TARGET_PREBUILT_KERNEL):kernel \
+    $(TARGET_PREBUILT_DTB):dtb.img
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)-kernel/dtbo.img
 
 # Kernel modules - Audio
 TARGET_MODULE_ALIASES += \
@@ -143,10 +156,10 @@ BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 
 # Partitions - Dynamic AB
-BOARD_LGE_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext odm product vendor
-BOARD_SUPER_PARTITION_GROUPS := lge_dynamic_partitions
-BOARD_SUPER_PARTITION_SIZE := 21474836480
-BOARD_LGE_DYNAMIC_PARTITIONS_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_SIZE) / 2 - 4194304 ) # 20.0 GiB / 2 - 4 MiB
+BOARD_FCNT_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext odm product vendor
+BOARD_SUPER_PARTITION_GROUPS := fcnt_dynamic_partitions
+BOARD_SUPER_PARTITION_SIZE := 12884901888
+BOARD_FCNT_DYNAMIC_PARTITIONS_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_SIZE) / 2 - 4194304 ) # 20.0 GiB / 2 - 4 MiB
 TARGET_COPY_OUT_ODM := odm
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
@@ -166,7 +179,7 @@ TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.timelm
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.qcom
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 90
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
@@ -179,7 +192,6 @@ ENABLE_VENDOR_RIL_SERVICE := true
 # SEPolicy
 include device/lineage/sepolicy/libperfmgr/sepolicy.mk
 include device/qcom/sepolicy_vndr/SEPolicy.mk
-include hardware/lge/sepolicy/SEPolicy.mk
 
 # Vendor SPL
 VENDOR_SECURITY_PATCH := 2023-07-01
@@ -223,4 +235,4 @@ QC_WIFI_HIDL_FEATURE_DUAL_AP := true
 CONFIG_ACS := true
 
 # Inherit the proprietary files
-include vendor/lge/timelm/BoardConfigVendor.mk
+include vendor/fcnt/amaterasu/BoardConfigVendor.mk

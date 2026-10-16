@@ -34,8 +34,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    hardware/lge
+    $(LOCAL_PATH)
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -119,16 +118,11 @@ TARGET_SCREEN_HEIGHT := 2460
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider-service.lge
+    android.hardware.camera.provider-service.lineage
 
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
-
-# DAC
-PRODUCT_PACKAGES += \
-    QuadDACPanel \
-    vendor.lge.hardware.audio.dac.control@2.0-service.proprietary
 
 # Display
 PRODUCT_PACKAGES += \
@@ -145,12 +139,6 @@ PRODUCT_PACKAGES += \
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.lge
-
-$(call soong_config_set_bool,LGE_FINGERPRINT_HAL,TARGET_HAS_EGISTEC_UDFPS,true)
 
 # FM packages
 PRODUCT_PACKAGES += \
@@ -170,9 +158,6 @@ PRODUCT_PACKAGES += \
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
-
-# Init
-$(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):libinit_lge_kona)
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -197,11 +182,8 @@ PRODUCT_PACKAGES += \
 $(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/battery/battery_charging_enabled)
 
 # Livedisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay-service.lge
-
-$(call soong_config_set,livedisplay_lge,enable_se,true)
-$(call soong_config_set,livedisplay_lge,enable_ce,true)
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.livedisplay-service.sdm
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -295,40 +277,30 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/qcom-caf/common/libqti-perfd-client
 
-# Recovery
-$(call soong_config_set,lineage_recovery,bootloader_message_offset,128)
-
-# RIL
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.5-service.lge
-
 # Rootdir
 PRODUCT_PACKAGES += \
-    init.mdm.sh \
-    init.qcom.post_boot.sh \
-    init.qcom.sh \
-    init.qcom.usb.sh \
-    init.qti.dcvs.sh \
+    fstab.qcom \
+    fstab.qcom.ramdisk
 
 PRODUCT_PACKAGES += \
-    fstab.timelm \
-    fstab.timelm.ramdisk \
-    init.lge.rc \
-    init.lge.vendor.rc \
+    init.class_main.sh \
+    init.mdm.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.sh \
+    init.qti.dcvs.sh
+
+PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.qcom.rc \
-    init.qcom.usb.rc \
-    init.recovery.timelm.rc \
+    init.recovery.qcom.rc \
     init.target.rc \
-    init.timelm.rc \
-    init.vendor.sensors.rc \
     ueventd.qcom.rc
 
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \
-    libsensorndkbridge \
-    sensors.lge
+    libsensorndkbridge
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
@@ -356,10 +328,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.qti
 
-# Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch-service.lge
-
 # Update engine
 PRODUCT_HOST_PACKAGES += \
     brillo_update_payload
@@ -382,7 +350,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.lge
+    vendor.qti.hardware.vibrator.service
 
 # Vintf
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := true
@@ -406,4 +374,4 @@ PRODUCT_PACKAGES += \
     firmware_wlan_mac.bin_symlink
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/lge/timelm/timelm-vendor.mk)
+$(call inherit-product, vendor/fcnt/amaterasu/amaterasu-vendor.mk)

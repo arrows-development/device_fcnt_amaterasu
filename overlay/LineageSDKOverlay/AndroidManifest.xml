@@ -4,7 +4,7 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="lineageos.platform.overlay.timelm">
+          package="lineageos.platform.overlay.amaterasu">
     <overlay android:targetPackage="lineageos.platform"
              android:isStatic="true"
              android:priority="1" />

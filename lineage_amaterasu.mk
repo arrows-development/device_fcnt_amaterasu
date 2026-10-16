@@ -8,21 +8,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from device
-$(call inherit-product, device/lge/timelm/device.mk)
+$(call inherit-product, device/fcnt/amaterasu/device.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_timelm
-PRODUCT_DEVICE := timelm
-PRODUCT_MANUFACTURER := LGE
-PRODUCT_BRAND := lge
-PRODUCT_MODEL := LM-V600
+PRODUCT_NAME := lineage_amaterasu
+PRODUCT_DEVICE := amaterasu
+PRODUCT_MANUFACTURER := FCNT
+PRODUCT_BRAND := FCNT
+PRODUCT_MODEL := F51A
 
-PRODUCT_GMS_CLIENTID_BASE := android-lge
+PRODUCT_GMS_CLIENTID_BASE := android-fcnt
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    DeviceName=timelm \
-    BuildDesc="timelm-user 13 TKQ1.220829.002 2318902104908 release-keys" \
-    BuildFingerprint=lge/timelm/timelm:13/TKQ1.220829.002/2318902104908:user/release-keys
+    DeviceName=F51A \
+    BuildDesc="F51A-user 13 V71R051A F51A.20230213 release-keys" \
+    BuildFingerprint=DOCOMO/F51A/F51A:12/V71R051A/F51A.20230213:user/release-keys
