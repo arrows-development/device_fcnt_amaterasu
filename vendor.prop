@@ -98,12 +98,7 @@ persist.vendor.cp.calib_level=128
 persist.vendor.cp.fcc_main_ua=800000
 
 # Crypto
-ro.crypto.set_dun=true
-ro.crypto.dm_default_key.options_format.version=2
-ro.crypto.volume.metadata.method=dm-default-key
-ro.crypto.volume.options=aes-256-xts:aes-256-cts:v2
-# Call deleteAllKeys if vold detects a factory reset
-ro.crypto.metadata_init_delete_all_keys.enabled=true
+ro.crypto.volume.filenames_mode=aes-256-cts
 
 # Dalvik dex2oat
 dalvik.vm.dex2oat64.enabled=true
