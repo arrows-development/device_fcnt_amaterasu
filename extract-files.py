@@ -41,6 +41,10 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/bin/qfp-daemon': blob_fixup()
+        .replace_needed('libhidltransport.so', 'libhidlbase.so'),
+    'vendor/lib64/libqfp-service.so': blob_fixup()
+        .remove_needed('libhidltransport.so'),
     'vendor/bin/hw/vendor.qti.hardware.vibrator.service.fcnt': blob_fixup()
         .replace_needed('android.hardware.vibrator-V1-ndk_platform.so',
                         'android.hardware.vibrator-V1-ndk.so')

@@ -1,0 +1,2 @@
+persist.vendor.qfp     u:object_r:vendor_qfp_prop:s0 exact bool
+persist.vendor.qfp.    u:object_r:vendor_qfp_prop:s0 prefix string
