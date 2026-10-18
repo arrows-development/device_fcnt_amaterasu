@@ -207,6 +207,7 @@ TARGET_SUPPORTS_OMX_SERVICE := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 PRODUCT_PACKAGES += \
+    vendor_bt_firmware_mountpoint \
     vendor_dsp_mountpoint \
     vendor_firmware_mnt_mountpoint
 
