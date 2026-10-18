@@ -92,3 +92,10 @@ prebuilt_etc {
     src: "ueventd.qcom.rc",
     vendor: true,
 }
+
+prebuilt_etc {
+    name: "vendor.qti.media.c2-service.amaterasu.rc",
+    src: "vendor.qti.media.c2-service.amaterasu.rc",
+    sub_dir: "init",
+    vendor: true,
+}

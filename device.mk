@@ -186,6 +186,9 @@ $(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class
 #    vendor.lineage.livedisplay-service.sdm
 
 # Media
+PRODUCT_PACKAGES += \
+    vendor.qti.media.c2-service.amaterasu.rc
+
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
