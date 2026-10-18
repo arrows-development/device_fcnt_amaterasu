@@ -685,7 +685,9 @@ vendor/lib64/unnhal-acc-hvx.so
 # NFC (Sony)
 vendor/bin/hw/android.hardware.nfc@1.2-service.cxd22xx
 vendor/etc/init/android.hardware.nfc@1.2-service.cxd22xx.rc
+vendor/etc/libnfc-cxd-225x03120101.conf
 vendor/etc/libnfc-cxd22xx.conf
+vendor/etc/libnfc-nci.conf
 vendor/firmware/cxd225x_firmware.bin
 
 # PASR
