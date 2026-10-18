@@ -1,0 +1,3 @@
+# Camera
+/dev/stmvl53l1_ranging              u:object_r:fcnt_stmvl53l1_ranging_dev:s0
+/vendor/bin/vl53l1_daemon_main      u:object_r:fcnt_vl53l1_daemon_service_exec:s0
