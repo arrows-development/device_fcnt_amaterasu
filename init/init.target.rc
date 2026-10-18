@@ -72,12 +72,10 @@ on post-fs-data
     mkdir /vendor/data/tombstones 0771 system system
     # Enable WLAN cold boot calibration
     write /sys/devices/platform/soc/b0000000.qcom,cnss-qca6390/fs_ready 1
-# FCNT:2020-12-23 felica/nfc AMATERASU-OSVR-SYSTEM-141 del start
-#    # NFC support
-#    mkdir /data/nfc 0770 nfc nfc
-#    mkdir /data/vendor/nfc 0770 nfc nfc
-#    mkdir /data/system/nfc 0770 nfc nfc
-# FCNT:2020-12-23 felica/nfc AMATERASU-OSVR-SYSTEM-141 del end
+    # NFC support
+    mkdir /data/nfc 0770 nfc nfc
+    mkdir /data/vendor/nfc 0770 nfc nfc
+    mkdir /data/system/nfc 0770 nfc nfc
 
 on post-fs-data
 # /* FUJITSU:2015-07-15_GEN-152-MONKEY_MOD-S */
