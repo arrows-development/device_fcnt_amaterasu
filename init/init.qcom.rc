@@ -30,6 +30,7 @@
 
 import /vendor/etc/init/hw/init.qti.ufs.rc
 import /vendor/etc/init/hw/init.qcom.usb.rc
+import /vendor/etc/init/hw/init.qcom.power.rc
 # FCNT LIMITED:2020-05-20 H20100631-5 add start
 import /odm/etc/init/hw/init.fcnt.usb.configfs.rc
 # FCNT LIMITED:2020-05-20 H20100631-5 add end
