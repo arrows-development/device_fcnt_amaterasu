@@ -13,6 +13,10 @@ $(call inherit-product, device/fcnt/amaterasu/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# WitAqua stuff
+PROCESSOR_INFO := Qualcomm Snapdragon 865 5G
+WITAQUA_MAINTAINER := kailua
+
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := lineage_amaterasu
 PRODUCT_DEVICE := amaterasu
