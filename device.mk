@@ -30,6 +30,9 @@ PRODUCT_PACKAGES += \
     SystemUIOverlay \
     WifiResourcesOverlay
 
+PRODUCT_PACKAGES += \
+    RegulatoryOverlayF-51A
+
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Soong namespaces

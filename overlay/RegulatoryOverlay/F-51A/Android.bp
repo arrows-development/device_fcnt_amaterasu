@@ -1,0 +1,4 @@
+runtime_resource_overlay {
+    name: "RegulatoryOverlayF-51A",
+    vendor: true,
+}
