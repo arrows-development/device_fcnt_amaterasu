@@ -181,7 +181,7 @@ include device/qcom/sepolicy_vndr/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Vendor SPL
-VENDOR_SECURITY_PATCH := 2023-07-01
+VENDOR_SECURITY_PATCH := 2022-12-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
