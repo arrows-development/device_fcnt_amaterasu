@@ -472,6 +472,11 @@ vendor/lib64/libfastcvopt.so
 vendor/lib64/libnanddatactrl.so
 
 # Felica
+system/app/Felica_Lock_Setting/Felica_Lock_Setting.apk;PRESIGNED
+system/etc/permissions/com.felicanetworks.felica.xml
+system/etc/permissions/com.felicanetworks.felicaextra.xml
+system/framework/com.felicanetworks.felica.jar
+system/framework/com.felicanetworks.felicaextra.jar
 product/etc/felica/common.cfg
 product/etc/felica/mfm.cfg
 product/etc/felica/mfs.cfg
