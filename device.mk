@@ -140,6 +140,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
+# FCNTParts
+-include packages/apps/FCNTParts/device.mk
+
+PRODUCT_PACKAGES += \
+    FCNTPartsOverlay
+
 # Felica
 -include packages/apps/FelicaService/device.mk
 
