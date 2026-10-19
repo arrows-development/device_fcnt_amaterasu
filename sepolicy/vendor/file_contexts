@@ -1,3 +1,7 @@
 # Camera
 /dev/stmvl53l1_ranging              u:object_r:fcnt_stmvl53l1_ranging_dev:s0
 /vendor/bin/vl53l1_daemon_main      u:object_r:fcnt_vl53l1_daemon_service_exec:s0
+
+# NFC
+/dev/cxd224x-i2c                                                u:object_r:nfc_device:s0
+/vendor/bin/hw/android\.hardware\.nfc@1\.2-service\.cxd22xx     u:object_r:hal_nfc_default_exec:s0
