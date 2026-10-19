@@ -28,6 +28,7 @@ PRODUCT_PACKAGES += \
     NcmTetheringOverlay \
     SettingsOverlay \
     SystemUIOverlay \
+    TelephonyOverlayAmaterasu \
     WifiResourcesOverlay
 
 PRODUCT_PACKAGES += \
