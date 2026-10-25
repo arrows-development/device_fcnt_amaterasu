@@ -1,0 +1,2 @@
+genfscon sysfs /devices/virtual/touchscreen/touch/wake_event u:object_r:vendor_sysfs_sensors:s0
+genfscon sysfs /devices/virtual/touchscreen/touch/wakeup_gesture u:object_r:vendor_sysfs_touch:s0
