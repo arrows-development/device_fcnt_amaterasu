@@ -320,7 +320,7 @@
     },
     {
       "Name": "DoubleTapToWakeEnable",
-      "Path": "/sys/devices/virtual/input/fcnt_touch/tap2wake",
+      "Path": "/sys/class/touchscreen/touch/wakeup_gesture",
       "Values": [
           "0",
           "1"
