@@ -1,0 +1,2 @@
+# Gesture
+genfscon sysfs   /devices/virtual/touchscreen/touch/wakeup_gesture        u:object_r:sysfs_gesture:s0

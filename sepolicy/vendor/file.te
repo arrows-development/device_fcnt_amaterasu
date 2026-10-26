@@ -1,0 +1,2 @@
+# Gesture
+type sysfs_gesture, sysfs_type, fs_type;
